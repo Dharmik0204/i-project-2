@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: aerodyne-compressors
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__ApplicationDbContextConnection
+        sync: false
+      - key: SmtpSettings__Server
+        sync: false
+      - key: SmtpSettings__Port
+        value: "587"
+      - key: SmtpSettings__SenderName
+        value: AERODYNE EQUIPMENTS
+      - key: SmtpSettings__SenderEmail
+        sync: false
+      - key: SmtpSettings__ReceiverEmail
+        sync: false
+      - key: SmtpSettings__Password
+        sync: false
+      - key: SmtpSettings__EnableSsl
+        value: "true"

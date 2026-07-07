@@ -1,0 +1,15 @@
+**/.git
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/out
+**/.artifacts
+**/*.user
+**/*.suo
+**/Dockerfile*
+**/.dockerignore
+**/README.md
+**/agent-tools
+**/terminals
+/*.cshtml

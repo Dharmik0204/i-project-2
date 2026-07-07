@@ -1,0 +1,556 @@
+﻿@{
+    ViewData["Title"] = "Variable Speed PM Screw Air Compressor Technical Specs | AERODYNE";
+    ViewData["MetaDescription"] = "Detailed technical specifications, power charts, and energy savings matrix for AERODYNE Permanent Magnet VFD Variable Speed Drive Screw Air Compressors.";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 PREMIUM MATRIX INDUSTRIAL THEME */
+    .aerodyne-details-engine {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a; /* Slate Black Graphic Layout */
+        overflow-x: hidden;
+    }
+
+        .aerodyne-details-engine h1,
+        .aerodyne-details-engine h2,
+        .aerodyne-details-engine h3,
+        .aerodyne-details-engine h4,
+        .aerodyne-details-engine h5,
+        .aerodyne-details-engine h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* Hero Sub-header banner */
+    .detail-hero {
+        background: linear-gradient(135deg, #091224 0%, #002244 100%);
+        border-bottom: 3px solid #004aad;
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .back-btn {
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+        .back-btn:hover {
+            background-color: #004aad !important;
+            color: white !important;
+            transform: translateX(-5px);
+        }
+
+    /* 📊 DYNAMIC RADIAL CIRCLE ROTATION & ANIMATION INTERFACE */
+    .circle-matrix-box {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .radial-progress-node {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .radial-progress-node svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg); /* Starts the circle drawing pattern cleanly from top center */
+        }
+
+        .radial-progress-node circle {
+            cx: 80;
+            cy: 80;
+            r: 70;
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+        }
+
+            .radial-progress-node circle.track-bg {
+                stroke: #1e293b;
+            }
+
+            .radial-progress-node circle.fill-dash {
+                stroke: #00d4ff; /* Process Cyan High Contrast Highlight Theme Color */
+                stroke-dasharray: 440; /* Full loop circumference bounds */
+                stroke-dashoffset: 440; /* Start empty to prepare for loading path */
+                transition: stroke-dashoffset 2.5s cubic-bezier(0.1, 1, 0.1, 1); /* Premium smooth ease-out rotation speed */
+            }
+
+    .percentage-display {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: #ffffff;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 1s cubic-bezier(0.1, 1, 0.1, 1) 0.3s;
+    }
+
+    /* Triggered automatically via script when animation runs */
+    .radial-progress-node.animated-run .percentage-display {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* 📋 INDUSTRIAL TECHNICAL PARAMETERS SPECIFICATION GRID */
+    .spec-table-container {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .premium-spec-table {
+        width: 100%;
+        color: #ffffff;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+        .premium-spec-table th {
+            background: #00337c !important;
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            padding: 12px 8px;
+            border: 1px solid #1e293b !important;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .premium-spec-table td {
+            padding: 10px 8px;
+            border: 1px solid #1e293b;
+            text-align: center;
+            vertical-align: middle;
+            background: #0b1224;
+            transition: background 0.2s ease;
+        }
+
+        .premium-spec-table tbody tr:hover td {
+            background: #152244 !important;
+        }
+
+    .model-highlight {
+        font-weight: 700;
+        color: #00d4ff;
+        text-align: left !important;
+        padding-left: 15px !important;
+    }
+
+    .footnote-banner {
+        background: rgba(0, 74, 173, 0.15);
+        border-left: 4px solid #004aad;
+        border-radius: 8px;
+        padding: 25px;
+        color: #cbd5e1;
+        line-height: 1.7;
+        text-align: justify;
+    }
+</style>
+
+<div class="aerodyne-details-engine">
+
+    <!-- 1. Header Toolbar Action Row Banner Component -->
+    <section class="detail-hero">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <span class="text-uppercase fw-bold text-info tracking-wider" style="font-size:0.8rem; letter-spacing:2px;">Premium Systems View</span>
+                    <h1 class="display-5 fw-bold text-white mt-1 mb-0">Variable Speed Screw Compressors</h1>
+                </div>
+                <a href="@Url.Action("Product", "Home")" class="btn btn-outline-info back-btn px-4 py-2 fw-bold rounded-1 border-2">
+                    <i class="bi bi-arrow-left me-2"></i> Back to Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <!-- 2. Interactive Circular Matrix Cost Control Panel Layout Box -->
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.75rem; letter-spacing: 0.5px;">How To Lower Your Operating Cost?</h2>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-8">
+                <div class="circle-matrix-box h-100">
+                    <div class="row g-4 text-center">
+
+                        <!-- Circle Entry Node 1: Drive Technology -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="radial-progress-node" data-percentage="45">
+                                <svg>
+                                    <circle class="track-bg"></circle>
+                                    <circle class="fill-dash" id="circle45"></circle>
+                                </svg>
+                                <span class="percentage-display">45%</span>
+                            </div>
+                            <h4 class="fw-bold text-white mb-2" style="font-size:1.1rem;">Drive Technology</h4>
+                            <p class="text-muted small px-2" style="text-align:justify; line-height:1.6;">A brand new and groundbreaking drive train coupled with our Imperium inverter has pushed energy efficiency to the next level, bringing energy savings of up to 45%.</p>
+                        </div>
+
+                        <!-- Circle Entry Node 2: Lower Demand -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="radial-progress-node" data-percentage="15">
+                                <svg>
+                                    <circle class="track-bg"></circle>
+                                    <circle class="fill-dash" id="circle15"></circle>
+                                </svg>
+                                <span class="percentage-display">15%</span>
+                            </div>
+                            <h4 class="fw-bold text-white mb-2" style="font-size:1.1rem;">Lower Demand</h4>
+                            <p class="text-muted small px-2" style="text-align:justify; line-height:1.6;">Another major benefit to going down the system/header pressure is that any leaks in the distribution of the compressed air will be reduced and also artificial demand will not be created in your compressed air system.</p>
+                        </div>
+
+                        <!-- Circle Entry Node 3: Constant Pressure -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="radial-progress-node" data-percentage="7">
+                                <svg>
+                                    <circle class="track-bg"></circle>
+                                    <circle class="fill-dash" id="circle7"></circle>
+                                </svg>
+                                <span class="percentage-display">7%</span>
+                            </div>
+                            <h4 class="fw-bold text-white mb-2" style="font-size:1.1rem;">Constant Pressure</h4>
+                            <p class="text-muted small px-2" style="text-align:justify; line-height:1.6;">As a rule of thumb for most compressors, a reduction of 1 bar in pressure (14.5 psi) will lead to a 7% saving in electricity consumption. AERODYNE PM Range Compressors are operating with constant pressure resulting in to power saving.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase Sidebar Unit Presenter Block -->
+            <div class="col-lg-4" data-aos="fade-left">
+                <div class="card border-0 h-100 p-4 shadow-lg text-center" style="background:#0b1224; border: 1px solid rgba(255, 255, 255, 0.05) !important; border-radius:16px;">
+                    <span class="badge bg-primary px-3 py-2 rounded-1 mx-auto mb-3 text-uppercase fw-bold" style="font-size:0.75rem; letter-spacing:1px; background-color:#004aad !important;">High-End Industrial Asset</span>
+                    <h3 class="fw-bold text-white mb-3" style="font-size: 1.4rem;">ATPM Series VSD PM Unit</h3>
+                    <div class="p-3 bg-white rounded-3 mb-4 d-flex align-items-center justify-content-center" style="height: 240px;">
+                        <img src="~/images/product2.webp" alt="Aerodyne PM Compressor Chassis Blueprint Specifications Display" class="img-fluid style-contain" style="max-height:100%;" />
+                    </div>
+                    <div class="bg-dark p-3 rounded-2 border border-secondary text-start mt-auto">
+                        <span class="text-info fw-bold d-block mb-1" style="font-size:0.8rem; letter-spacing:0.5px;"><i class="bi bi-shield-fill-check me-1"></i> ENERGY SAVING VALUE</span>
+                        <p class="text-white fw-bold mb-0" style="font-size: 1.15rem;">Energy Saving Up To 45%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Precise Complete Digital Data Sheets Structural Matrix Layout Grid Component -->
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.5rem; letter-spacing: 0.5px;" data-aos="fade-right">Technical Parameters Specifications Grid</h2>
+
+        <div class="spec-table-container table-responsive mb-5" data-aos="fade-up">
+            <table class="table premium-spec-table table-bordered">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Model</th>
+                        <th rowspan="2">Working Pressure<br><span class="text-info text-lowercase" style="font-size:0.7rem;">Mpa</span></th>
+                        <th colspan="2">Motor</th>
+                        <th colspan="3">Capacity</th>
+                        <th rowspan="2">Noise<br><span class="text-info text-lowercase" style="font-size:0.7rem;">db±2</span></th>
+                        <th rowspan="2">Weight<br><span class="text-info text-lowercase" style="font-size:0.7rem;">kg</span></th>
+                        <th rowspan="2">Connection<br><span class="text-info text-lowercase" style="font-size:0.7rem;">G</span></th>
+                        <th rowspan="2">Length x Width x Height<br><span class="text-info text-lowercase" style="font-size:0.7rem;">mm</span></th>
+                    </tr>
+                    <tr>
+                        <th>kW</th>
+                        <th>HP</th>
+                        <th>l/s</th>
+                        <th>CFM</th>
+                        <th>m³/min</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ATPM10 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM10 A</td>
+                        <td>0.80</td>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>4.6-17.6</td>
+                        <td>10-40</td>
+                        <td>0.28-1.06</td>
+                        <td>68</td>
+                        <td>150</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>4.8-14.7</td>
+                        <td>10-33</td>
+                        <td>0.29-0.88</td>
+                        <td>68</td>
+                        <td>150</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <!-- ATPM15 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM15 A</td>
+                        <td>0.80</td>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>7.5-25.8</td>
+                        <td>16-60</td>
+                        <td>0.45-1.55</td>
+                        <td>69</td>
+                        <td>210</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>5.3-21.5</td>
+                        <td>11-50</td>
+                        <td>0.32-1.29</td>
+                        <td>69</td>
+                        <td>210</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <!-- ATPM20 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM20 A</td>
+                        <td>0.80</td>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>10.4-34.8</td>
+                        <td>22-80</td>
+                        <td>0.6-2.1</td>
+                        <td>70</td>
+                        <td>210</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>10.0-27.7</td>
+                        <td>21-60</td>
+                        <td>0.6-1.7</td>
+                        <td>70</td>
+                        <td>210</td>
+                        <td>3/4"</td>
+                        <td>905x740x1000</td>
+                    </tr>
+                    <!-- ATPM25 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM25 A</td>
+                        <td>0.80</td>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>17.0-53.0</td>
+                        <td>36-112</td>
+                        <td>1.0-3.2</td>
+                        <td>70</td>
+                        <td>280</td>
+                        <td>1"</td>
+                        <td>1005x895x1268</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>16.5-42.8</td>
+                        <td>35-91</td>
+                        <td>1.0-2.6</td>
+                        <td>70</td>
+                        <td>280</td>
+                        <td>1"</td>
+                        <td>1005x895x1268</td>
+                    </tr>
+                    <!-- ATPM30 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM30 A</td>
+                        <td>0.80</td>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>17.0-60.7</td>
+                        <td>36-129</td>
+                        <td>1.0-3.6</td>
+                        <td>70</td>
+                        <td>290</td>
+                        <td>1"</td>
+                        <td>1005x895x1268</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>16.5-51.7</td>
+                        <td>35-110</td>
+                        <td>1.0-3.1</td>
+                        <td>70</td>
+                        <td>290</td>
+                        <td>1"</td>
+                        <td>1005x895x1268</td>
+                    </tr>
+                    <!-- ATPM40 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM40 A</td>
+                        <td>0.80</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>20.2-82.0</td>
+                        <td>43-174</td>
+                        <td>1.2-4.9</td>
+                        <td>72</td>
+                        <td>320</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>17.2-70.0</td>
+                        <td>36-148</td>
+                        <td>1.0-4.2</td>
+                        <td>72</td>
+                        <td>320</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                    <!-- ATPM50 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM50 A</td>
+                        <td>0.80</td>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>30.2-105.5</td>
+                        <td>64-224</td>
+                        <td>1.8-6.3</td>
+                        <td>71</td>
+                        <td>390</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>29.5-89.7</td>
+                        <td>63-190</td>
+                        <td>1.8-5.4</td>
+                        <td>71</td>
+                        <td>400</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                    <!-- ATPM60 A Matrix Parameters Set Row Block -->
+                    <tr>
+                        <td rowspan="2" class="model-highlight">ATPM60 A</td>
+                        <td>0.80</td>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>30.0-121.3</td>
+                        <td>64-257</td>
+                        <td>1.8-7.3</td>
+                        <td>73</td>
+                        <td>410</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                    <tr>
+                        <td>1.00</td>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>29.5-107.5</td>
+                        <td>63-228</td>
+                        <td>1.8-6.5</td>
+                        <td>73</td>
+                        <td>410</td>
+                        <td>1 1/2"</td>
+                        <td>1235x1025x1405</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4. Strategic Engineering Application Summary Technical Footnote Info Block -->
+        <div class="footnote-banner shadow mb-4" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-md-1 d-none d-md-block text-center">
+                    <i class="bi bi-info-circle-fill text-info display-6"></i>
+                </div>
+                <div class="col-md-11">
+                    <p class="mb-0">
+                        If you have a stable compressed air demand, a fixed-speed compressor will work just fine for you. However, if your air use fluctuates during the day or week, a compressor always running at 100% will waste a lot of energy. <strong>AERODYNE's Permanent Magnet Motor Driven, Variable Speed Drive (VSD) compressors</strong> adjust their motor speed to follow your air demand as it goes up and down.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Corporate Support Center Contact Grid Metadata Footer -->
+        <div class="d-flex justify-content-between flex-wrap gap-3 px-2 text-muted small mt-4">
+            <div><i class="bi bi-telephone-fill text-info me-2"></i>Customer Care: <strong>+91-6352386643</strong></div>
+            <div><i class="bi bi-envelope-fill text-info me-2"></i>Corporate Email: <strong>aerodyne.equipments@@gmail.com</strong></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize structural animations tracking layout
+        AOS.init({ once: true, mirror: false });
+
+        // 🚀 ADVANCED RADIAL CIRCLE FILL ROTATION SYSTEM ENGINE
+        function triggerRadialAnimations() {
+            const nodes = document.querySelectorAll('.radial-progress-node');
+            const circumference = 440; // Total stroke loop circumference context based on $2\pi r$ ($2 \times 3.14 \times 70$)
+
+            nodes.forEach(node => {
+                const percent = parseInt(node.getAttribute('data-percentage'));
+                const circle = node.querySelector('.fill-dash');
+
+                if (circle) {
+                    // Set circle line to fully empty before triggering loading trace path
+                    circle.style.strokeDashoffset = circumference;
+
+                    // Force the browser layout engine engine to draw fresh frames
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            const offset = circumference - (percent / 100) * circumference;
+                            circle.style.strokeDashoffset = offset;
+                            node.classList.add('animated-run'); // Triggers text opacity transition smoothly
+                        }, 100);
+                    });
+                }
+            });
+        }
+
+        // Safe anchor fallback execution depending on loading states
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            setTimeout(triggerRadialAnimations, 400);
+        } else {
+            window.addEventListener('load', () => setTimeout(triggerRadialAnimations, 400));
+        }
+    });
+</script>

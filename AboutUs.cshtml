@@ -1,0 +1,323 @@
+﻿@{
+    ViewData["Title"] = "About AERODYNE EQUIPMENTS | Air Compressor Company Profile";
+    ViewData["MetaDescription"] = "Learn more about AERODYNE EQUIPMENTS. Over 7+ years of engineering expertise in manufacturing certified, factory-tested industrial air infrastructure solutions in Ahmedabad, India.";
+    ViewData["MetaKeywords"] = "about aerodyne equipments, air compressor company profile, industrial compressor manufacturer ahmedabad, certified compressor plant india, reliable compressor engineering";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 CHARCOAL DARK HIGH-END INDUSTRIAL GRAPHICS */
+    .about-page-wrapper {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a; /* Premium Charcoal Slate Engine Backdrop */
+        overflow-x: hidden;
+    }
+
+        .about-page-wrapper h1,
+        .about-page-wrapper h2,
+        .about-page-wrapper h3,
+        .about-page-wrapper h4,
+        .about-page-wrapper h5,
+        .about-page-wrapper h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* 1. Immersive Parallax Corporate Canvas Header */
+    .about-hero {
+        background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 140px 0;
+        text-align: center;
+        border-radius: 0 0 60px 60px;
+        box-shadow: 0 20px 40px rgba(0, 74, 173, 0.25);
+        border-bottom: 4px solid #004aad;
+    }
+
+    .section-spacing {
+        padding: 100px 0;
+    }
+
+    .accent-title {
+        color: #00d4ff; /* Tuned to Radiant Electric Cyan for premium dark mode contrast */
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+    }
+
+    /* 2. Symmetric Interactive Structural Glassmorphism Cards */
+    .glass-card {
+        background: #1e293b;
+        border: 1px solid rgba(0, 74, 173, 0.25);
+        border-radius: 16px;
+        padding: 45px 40px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+        .glass-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: #00d4ff;
+            box-shadow: 0 30px 60px rgba(0, 74, 173, 0.3);
+            background: #0f172a;
+        }
+
+    .feature-list li {
+        transition: transform 0.3s ease;
+        padding: 8px 0;
+    }
+
+    .glass-card:hover .feature-list li {
+        transform: translateX(6px);
+    }
+
+    .feature-list i {
+        color: #00d4ff;
+        font-size: 1.3rem;
+        margin-right: 15px;
+    }
+
+    /* 3. Tech Dynamic Team Panel Matrix */
+    .team-section {
+        background-color: #0b1329;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 85px 45px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .interactive-text-node {
+        transition: color 0.3s ease;
+    }
+
+    .team-section .col-md-4:hover .interactive-text-node {
+        color: #00d4ff !important;
+    }
+
+    /* 4. Balanced Bounded Contact Badges Matrix */
+    .contact-badge {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: left;
+        border: 1px solid rgba(0, 74, 173, 0.2);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+        .contact-badge:hover {
+            border-color: #00d4ff;
+            background-color: #0f172a;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.15);
+        }
+
+        .contact-badge p {
+            color: #e2e8f0;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+    .section-pill-tag {
+        background-color: rgba(0, 74, 173, 0.2);
+        color: #00d4ff;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    /* Responsive Grid Balance Helpers */
+    @@media (max-width: 992px) {
+        .about-hero {
+            padding: 100px 0;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .team-section {
+            padding: 50px 20px;
+        }
+
+        .border-start, .border-end {
+            border: none !important;
+            border-top: 1px solid rgba(255,255,255,0.08) !important;
+            border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+            margin: 25px 0;
+            padding: 20px 0 !important;
+        }
+    }
+</style>
+
+<div class="about-page-wrapper">
+
+    <section class="about-hero">
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="section-pill-tag">Corporate Legacy</span>
+            <h1 class="display-3 fw-bold mb-4">AERODYNE EQUIPMENTS</h1>
+            <p class="lead fs-4 opacity-75 mx-auto text-white-50" style="max-width: 800px; font-weight: 400;">
+                Your trusted engineering partner in manufacturing high-efficiency compressed air systems and industrial solutions.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-spacing">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="accent-title">Pioneering Industrial Air Infrastructure</h2>
+                    <p class="fs-5 text-white mb-5" style="text-align: justify; opacity: 0.9; line-height: 1.85;">
+                        At AERODYNE EQUIPMENTS, we engineer premium compressed air systems designed for heavy-duty operational long-term lifespans. With over 7+ years of dedicated technical expertise, we stand as a premier manufacturer in Ahmedabad, delivering factor-certified rotary screw compressors and air treatment networks built to endure high stress environments.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="100">
+                            <h5 class="fw-bold text-white mb-2"><i class="bi bi-gear-fill me-2" style="color: #00d4ff;"></i>Deep Technical Expertise</h5>
+                            <p class="small text-muted" style="line-height: 1.6;">The primary solution provider across textile loom arrays, cement silos, glass molding, and automotive manufacturing lines.</p>
+                        </div>
+                        <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="200">
+                            <h5 class="fw-bold text-white mb-2"><i class="bi bi-box-seam-fill me-2" style="color: #00d4ff;"></i>End-to-End Solutions</h5>
+                            <p class="small text-muted" style="line-height: 1.6;">From dynamic CAD layout customization and fluid performance testing to fast on-site ex-stock maintenance delivery.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="ps-lg-3">
+                        <div class="glass-card">
+                            <h3 class="fw-bold mb-4 text-white">Why Industries Trust AERODYNE</h3>
+                            <ul class="list-unstyled feature-list mb-0">
+                                <li class="mb-3 d-flex align-items-center"><i class="bi bi-shield-check"></i><span><strong>Uncompromising Reliability:</strong> Factor-tested to operate seamlessly under extreme ambient temperatures up to 55°C.</span></li>
+                                <li class="mb-3 d-flex align-items-center"><i class="bi bi-lightbulb"></i><span><strong>Energy Innovation:</strong> Advanced Permanent Magnet VFD setups generating verified utility power savings up to 45%.</span></li>
+                                <li class="mb-3 d-flex align-items-center"><i class="bi bi-people"></i><span><strong>Customer-Centric Fleet Allocation:</strong> CAD configurations tailored precisely around your specialized layout parameters.</span></li>
+                                <li class="bi-trophy mb-3 d-flex align-items-center"><i class="bi bi-trophy"></i><span><strong>Proven Track Record:</strong> Successful large-scale distribution networks with over 500+ premium global factories served.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="row align-items-center rounded-5 overflow-hidden p-5" style="background-color: #0b1329; border: 1px solid rgba(255,255,255,0.04); data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-duration="800">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80" class="img-fluid rounded-4 shadow" alt="AERODYNE High-End Engineering Quality Control Workspace Container" />
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h2 class="fw-bold mb-4" style="color: #00d4ff;">Factor-Verified Quality Control Standards</h2>
+                    <p class="fs-5 text-white-50" style="text-align: justify; line-height: 1.85;">
+                        Quality is the absolute cornerstone of our manufacturing blueprint. Every single synchronous motor block, twin-rotor element, and auxiliary air receiver receiver vessel undergoes rigid pressure stress validation checks. When your business chooses AERODYNE EQUIPMENTS, you acquire high-purity, factor-verified pneumatic systems engineered to reduce operational maintenance costs from day one.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing">
+        <div class="container">
+            <div class="team-section text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="accent-title mb-4">Our Dynamic Team Values</h2>
+                <p class="fs-5 mx-auto mb-5 text-white-50" style="max-width: 900px; line-height: 1.75;">
+                    Our industrial growth is fueled by the collective technical precision and dedication of our application engineering division. Comprising specialized mechanical talents, we are united by a singular passion for energy optimization and sustainable compressor infrastructure development.
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="p-2">
+                            <h4 class="fw-bold text-white mb-2 interactive-text-node">Operational Synergy</h4>
+                            <p class="small text-muted mb-0">Seamlessly combining field expertise with smart automation grids to tackle complex plant capacity layout requests.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 border-start border-end" style="border-color: rgba(255,255,255,0.08) !important;">
+                        <div class="p-2">
+                            <h4 class="fw-bold text-white mb-2 interactive-text-node">Absolute Integrity</h4>
+                            <p class="small text-muted mb-0">We forge long-term technical partnerships built on factor testing transparency and clear commercial accountability margins.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-2">
+                            <h4 class="fw-bold text-white mb-2 interactive-text-node">Engineering Advancement</h4>
+                            <p class="small text-muted mb-0">Continuously researching cutting-edge dual stage and low-pressure components to propel your production metrics forward.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-spacing border-top" style="border-color: rgba(255, 255, 255, 0.06) !important;">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <span class="section-pill-tag">Contact Desk</span>
+                <h2 class="fw-bold text-white">Acquire Direct Technical Assistance</h2>
+                <div class="mx-auto mt-2" style="width: 55px; height: 3px; background-color: #004aad;"></div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="900">
+                    <div class="contact-badge">
+                        <i class="bi bi-geo-alt-fill fs-1" style="color: #00d4ff;"></i>
+                        <div>
+                            <h3 class="fw-bold text-white text-uppercase small mb-1" style="letter-spacing: 0.5px; font-size:0.9rem;">Corporate Plant Headquarters</h3>
+                            <p class="small mb-0 text-white-50">82, Gajanan Ind. Estate -3, Kathwada-Singarva Rd, Ahmedabad, Gujarat-382430</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="900">
+                    <div class="contact-badge">
+                        <i class="bi bi-telephone-fill fs-1" style="color: #00d4ff;"></i>
+                        <div>
+                            <h3 class="fw-bold text-white text-uppercase small mb-1" style="letter-spacing: 0.5px; font-size:0.9rem;">Direct Engineering Line</h3>
+                            <p class="small mb-0 text-white fw-bold">+91 63523-86643</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="900">
+                    <div class="contact-badge">
+                        <i class="bi bi-envelope-at-fill fs-1" style="color: #00d4ff;"></i>
+                        <div>
+                            <h3 class="fw-bold text-white text-uppercase small mb-1" style="letter-spacing: 0.5px; font-size:0.9rem;">Support Helpdesk</h3>
+                            <p class="small mb-0 text-white-50">aerodyne.equipments@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-3" data-aos="fade-up" data-aos-duration="800">
+                <div class="mx-auto rounded-3 p-5 text-center" style="background-color: #0b1329; border: 1px solid rgba(0, 74, 173, 0.2); max-width: 850px;">
+                    <h3 class="fw-bold mb-3 text-white">Have Specific Technical Fleet Requirements?</h3>
+                    <p class="small text-muted mb-4 mx-auto" style="max-width: 600px;">Connect alongside our specialized design engineers today to evaluate custom compressor schemas aligned to your factory parameters.</p>
+                    <a asp-action="ContactUs" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow" style="background-color: #004aad; border: none; font-size: 0.95rem; letter-spacing: 0.5px;">CONSULT WITH AN ENGINEER <i class="bi bi-arrow-right-short ms-2 fs-5 align-middle"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init({
+            once: true,
+            mirror: false
+        });
+    });
+</script>
+

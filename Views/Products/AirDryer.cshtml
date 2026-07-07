@@ -1,0 +1,274 @@
+﻿@{
+    ViewData["Title"] = "Refrigerated Compressed Air Dryer Specification Grid | AERODYNE";
+    ViewData["MetaDescription"] = "Technical specifications, flow capacities, and physical dimensions for AERODYNE high-efficiency inline refrigerated compressed air treatment dryers.";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 PREMIUM INDUSTRIAL CHARCOAL SLATE ENVIRONMENT ENGINE */
+    .aerodyne-details-engine {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a; /* Custom Premium Charcoal Layout Backdrop */
+        overflow-x: hidden;
+    }
+
+        .aerodyne-details-engine h1,
+        .aerodyne-details-engine h2,
+        .aerodyne-details-engine h3,
+        .aerodyne-details-engine h4,
+        .aerodyne-details-engine h5,
+        .aerodyne-details-engine h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* Hero Sub-header banner */
+    .detail-hero {
+        background: linear-gradient(135deg, #091224 0%, #002244 100%);
+        border-bottom: 3px solid #004aad;
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .back-btn {
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+        .back-btn:hover {
+            background-color: #004aad !important;
+            color: white !important;
+            transform: translateX(-5px);
+        }
+
+    /* 📋 CR0RE SYSTEM VALUE OVERVIEW LAYOUT PANEL (`image_a4441b.jpg`) */
+    .dryer-tech-box {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .core-bullet-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+        .core-bullet-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+            .core-bullet-list li::before {
+                content: '\F272'; /* Check box icon configuration context indicator */
+                font-family: 'bootstrap-icons';
+                position: absolute;
+                left: 0;
+                color: #00d4ff;
+                font-weight: bold;
+            }
+
+    .technical-sub-bullet {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #cbd5e1;
+        text-align: justify;
+    }
+
+        .technical-sub-bullet strong {
+            color: #00d4ff !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+    /* 📋 ACCURATE RUGGED SPECIFICATION SPECIFICATION DATA SHEET MATRIX GRID */
+    .spec-table-container {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .premium-spec-table {
+        width: 100%;
+        color: #ffffff;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+    }
+
+        .premium-spec-table th {
+            background: #00337c !important;
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            padding: 12px 6px;
+            border: 1px solid #1e293b !important;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .premium-spec-table td {
+            padding: 9px 6px;
+            border: 1px solid #1e293b;
+            text-align: center;
+            vertical-align: middle;
+            background: #0b1224;
+            transition: background 0.2s ease;
+        }
+
+        .premium-spec-table tbody tr:hover td {
+            background: #152244 !important;
+        }
+
+    .model-highlight {
+        font-weight: 700;
+        color: #00d4ff;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .high-contrast-footer {
+        color: #ffffff !important;
+        font-size: 0.85rem;
+    }
+</style>
+
+<div class="aerodyne-details-engine">
+
+    <!-- 1. Header Toolbar Action Row Banner -->
+    <section class="detail-hero">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <span class="text-uppercase fw-bold text-info tracking-wider" style="font-size:0.8rem; letter-spacing:2px;">Downstream Purification Systems</span>
+                    <h1 class="display-5 fw-bold text-white mt-1 mb-0">Refrigerated Air Dryers</h1>
+                </div>
+                <a href="@Url.Action("Product", "Home")" class="btn btn-outline-info back-btn px-4 py-2 fw-bold rounded-1 border-2">
+                    <i class="bi bi-arrow-left me-2"></i> Back to Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <!-- 2. Integrated Product Application Insights Blueprint Overview Row -->
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.6rem; letter-spacing: 0.5px;">Enhance Your Compressed Air Quality With Our Dryers</h2>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-8" data-aos="fade-right">
+                <div class="dryer-tech-box h-100">
+                    <p class="text-white opacity-90 mb-4" style="text-align: justify; line-height: 1.75; font-size:0.98rem;">
+                        The inlet air of a compressor contains humidity and contaminants like dust, oil, etc. During the compression these contaminants reach a high concentration. This can cause wear and corrosion to the downstream equipment, with potential costly interruption to production and reduction in the efficiency and service life of the equipment used.
+                    </p>
+
+                    <h5 class="fw-bold text-white mb-3 text-uppercase" style="letter-spacing: 0.5px; color: #00d4ff !important;">The benefit of refrigerant dryers:</h5>
+                    <ul class="core-bullet-list mb-4">
+                        <li>Increase your overall productivity</li>
+                        <li>Improve your final product quality</li>
+                        <li>Protect your downstream equipment against corrosion</li>
+                        <li>Clean and dry air</li>
+                    </ul>
+
+                    <hr style="border-color: rgba(255,255,255,0.1); margin: 25px 0;">
+
+                    <div class="d-flex flex-column gap-3">
+                        <p class="technical-sub-bullet mb-0"><strong>Refrigerant Compressor:</strong> Driven by an electric motor, cooled using refrigerant fluid and protected against thermal overload.</p>
+                        <p class="technical-sub-bullet mb-0"><strong>Refrigerant Condenser:</strong> Air-cooled and with a large exchange surface for high thermal exchange.</p>
+                        <p class="technical-sub-bullet mb-0"><strong>Motor-Driven Fan:</strong> For the condenser cooling air flow.</p>
+                        <p class="technical-sub-bullet mb-0"><strong>Automatic Discharge of Condensate:</strong> Drain removes maximum condensate from the system. Microprocessor based controller for controlling solenoid valve timing.</p>
+                        <p class="technical-sub-bullet mb-0"><strong>Air-Air Exchanger:</strong> With high thermal performance and low pressure drop.</p>
+                        <p class="technical-sub-bullet mb-0"><strong>Hot Gas Bypass Valve:</strong> Controls the refrigerant capacity under all load conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proportional Showcase Framework Side Panel -->
+            <div class="col-lg-4" data-aos="fade-left">
+                <div class="card border-0 h-100 p-4 shadow-lg text-center" style="background:#0b1224; border: 1px solid rgba(255, 255, 255, 0.05) !important; border-radius:16px;">
+                    <span class="badge bg-primary px-3 py-2 rounded-1 mx-auto mb-3 text-uppercase fw-bold" style="font-size:0.75rem; letter-spacing:1px; background-color:#004aad !important;">Pure System Buffer</span>
+                    <h3 class="fw-bold text-white mb-3" style="font-size: 1.4rem;">Refrigerated Air Dryer</h3>
+                    <div class="p-3 bg-white rounded-3 mb-4 d-flex align-items-center justify-content-center" style="height: 240px;">
+                        <img src="@Url.Content("~/images/product6.webp")" alt="Aerodyne Refrigerated Industrial Air Treatment Dryer Chassis Showcase" class="img-fluid style-contain" style="max-height:100%;" />
+                    </div>
+                    <div class="bg-dark p-3 rounded-2 border border-secondary text-start mt-auto">
+                        <span class="text-info fw-bold d-block mb-1" style="font-size:0.8rem; letter-spacing:0.5px;"><i class="bi bi-droplet-half me-1"></i> MAX WORKING PRESSURE</span>
+                        <p class="text-white fw-bold mb-0" style="font-size: 1.15rem;">Continuous Load up to 14 Bar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Precise Technical Parameter Data Sheet Grid (`image_a44441.jpg`) -->
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.5rem; letter-spacing: 0.5px;" data-aos="fade-right">Technical Parameters Specifications Grid</h2>
+
+        <div class="spec-table-container table-responsive mb-5" data-aos="fade-up">
+            <table class="table premium-spec-table table-bordered">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Model</th>
+                        <th rowspan="2">Working Pressure<br><span class="text-info text-lowercase" style="font-size:0.7rem;">bar</span></th>
+                        <th colspan="3">Air Treatment Capacity - Flow</th>
+                        <th rowspan="2">Power Supply</th>
+                        <th rowspan="2">Weight<br><span class="text-info text-lowercase" style="font-size:0.7rem;">kg</span></th>
+                        <th rowspan="2">Connection<br><span class="text-info text-lowercase" style="font-size:0.7rem;">G</span></th>
+                        <th rowspan="2">Length x Width x Height<br><span class="text-info text-lowercase" style="font-size:0.7rem;">mm</span></th>
+                    </tr>
+                    <tr>
+                        <th>l/s</th>
+                        <th>CFM</th>
+                        <th>m³/hr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="model-highlight">AD-1A</td><td>14</td><td>5</td><td>10</td><td>17</td><td>1-Phase</td><td>30</td><td>1/2"</td><td>21"x14"x20.5"</td></tr>
+                    <tr><td class="model-highlight">AD-2A</td><td>14</td><td>9</td><td>20</td><td>34</td><td>1-Phase</td><td>50</td><td>1/2"</td><td>26"x16.5"x26"</td></tr>
+                    <tr><td class="model-highlight">AD-4A</td><td>14</td><td>19</td><td>40</td><td>68</td><td>1-Phase</td><td>60</td><td>1/2"</td><td>26"x16.5"x26"</td></tr>
+                    <tr><td class="model-highlight">AD-6A</td><td>14</td><td>28</td><td>60</td><td>102</td><td>1-Phase</td><td>65</td><td>1/2"</td><td>32"x19"x26"</td></tr>
+                    <tr><td class="model-highlight">AD-8A</td><td>14</td><td>38</td><td>80</td><td>136</td><td>1-Phase</td><td>70</td><td>1"</td><td>32"x22"x26"</td></tr>
+                    <tr><td class="model-highlight">AD-10A</td><td>14</td><td>47</td><td>100</td><td>170</td><td>1-Phase</td><td>120</td><td>1"</td><td>35"x26"x38"</td></tr>
+                    <tr><td class="model-highlight">AD-15A</td><td>14</td><td>71</td><td>150</td><td>255</td><td>1-Phase</td><td>130</td><td>1.5"</td><td>35"x26"x38"</td></tr>
+                    <tr><td class="model-highlight">AD-20A</td><td>14</td><td>95</td><td>200</td><td>340</td><td>3-Phase</td><td>160</td><td>1.5"</td><td>45"x28"x39"</td></tr>
+                    <tr><td class="model-highlight">AD-25A</td><td>14</td><td>118</td><td>250</td><td>425</td><td>3-Phase</td><td>180</td><td>2"</td><td>45"x28"x39"</td></tr>
+                    <tr><td class="model-highlight">AD-30A</td><td>14</td><td>142</td><td>300</td><td>510</td><td>3-Phase</td><td>200</td><td>2"</td><td>45"x28"x39"</td></tr>
+                    <tr><td class="model-highlight">AD-40A</td><td>14</td><td>190</td><td>400</td><td>680</td><td>3-Phase</td><td>300</td><td>2"</td><td>58"x33"x43"</td></tr>
+                    <tr><td class="model-highlight">AD-50A</td><td>14</td><td>237</td><td>500</td><td>850</td><td>3-Phase</td><td>350</td><td>2"</td><td>58"x36"x43"</td></tr>
+                    <tr><td class="model-highlight">AD-60A</td><td>14</td><td>284</td><td>600</td><td>1020</td><td>3-Phase</td><td>400</td><td>3"</td><td>65"x36"x48"</td></tr>
+                    <tr><td class="model-highlight">AD-75A</td><td>14</td><td>355</td><td>750</td><td>1274</td><td>3-Phase</td><td>450</td><td>3"</td><td>65"x36"x48"</td></tr>
+                    <tr><td class="model-highlight">AD-85A</td><td>14</td><td>403</td><td>850</td><td>1444</td><td>3-Phase</td><td>500</td><td>3"</td><td>70"x42"x60"</td></tr>
+                    <tr><td class="model-highlight">AD-100A</td><td>14</td><td>474</td><td>1000</td><td>1699</td><td>3-Phase</td><td>650</td><td>4"</td><td>80"x47"x58"</td></tr>
+                    <tr><td class="model-highlight">AD-120A</td><td>14</td><td>569</td><td>1200</td><td>2039</td><td>3-Phase</td><td>700</td><td>4"</td><td>80"x47"x58"</td></tr>
+                    <tr><td class="model-highlight">AD-150A</td><td>14</td><td>711</td><td>1500</td><td>2549</td><td>3-Phase</td><td>900</td><td>4"</td><td>82"x50"x64"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Corporate Support Center Contact Coordinates Footer -->
+        <div class="d-flex justify-content-between flex-wrap gap-3 px-2 high-contrast-footer mt-4">
+            <div><i class="bi bi-telephone-fill text-info me-2"></i>Customer Care: <strong>+91-6352386643</strong></div>
+            <div><i class="bi bi-envelope-fill text-info me-2"></i>Corporate Email: <strong>aerodyne.equipments@@gmail.com</strong></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Baar-baar triggers hone wale configurations repeat context load loop
+        AOS.init({ once: false, mirror: true, duration: 900 });
+    });
+</script>

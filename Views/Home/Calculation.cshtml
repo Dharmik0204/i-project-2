@@ -1,0 +1,1026 @@
+﻿@{
+    ViewData["Title"] = "Compressed Air Energy Savings Calculator | AERODYNE";
+    ViewData["MetaDescription"] = "Calculate your factory's annual electricity utility savings by implementing AERODYNE high-efficiency rotary screw air compressors framework mapping.";
+    ViewData["MetaKeywords"] = "air compressor savings calculator, electricity audit formula, screw compressor kw power, vfd energy calculation, aerodyne compressor optimization ahmedabad";
+
+    bool isUnlocked = TempData["VerifiedSavings"] != null;
+    string savingsOutput = isUnlocked ? TempData["VerifiedSavings"]?.ToString() : "₹ X,XX,XXX";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 PREMIUM MATRIX INDUSTRIAL ENVIRONMENT THEME */
+    .aerodyne-calc-engine {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a;
+        overflow-x: hidden;
+    }
+
+        .aerodyne-calc-engine h1,
+        .aerodyne-calc-engine h2,
+        .aerodyne-calc-engine h3,
+        .aerodyne-calc-engine h4,
+        .aerodyne-calc-engine h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* Sub-header banner elements */
+    .calc-hero {
+        background: linear-gradient(135deg, #091224 0%, #002244 100%);
+        border-bottom: 3px solid #004aad;
+        padding: 40px 0;
+        position: relative;
+    }
+
+    .back-btn {
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+        .back-btn:hover {
+            background-color: #004aad !important;
+            color: white !important;
+            transform: translateX(-5px);
+        }
+
+    /* 🎯 FIX 1: FULL-WIDTH IMMERSIVE CORRESPONDING CANVAS BANNER ENGINE (No Layout Box Clipping) */
+    .vsd-banner-panel {
+        background: linear-gradient(135deg, #002244 0%, #005275 50%, #0084b4 100%);
+        padding: 80px 0; /* Huge spacious distribution spacing */
+        border-bottom: 4px solid #00d4ff;
+        margin-bottom: 60px;
+        width: 100vw; /* Forces element row to expand edge to edge fully across layout viewports */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .vsd-banner-title {
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 1.15;
+    }
+
+    .vsd-banner-desc {
+        font-size: 1.35rem;
+        color: #f1f5f9;
+        opacity: 0.95;
+        line-height: 1.7;
+        max-width: 950px;
+        margin-bottom: 40px;
+        letter-spacing: 0.3px;
+    }
+
+    .btn-banner-expert {
+        background-color: #ffffff !important;
+        color: #004aad !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 0.95rem;
+        padding: 16px 45px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: 2px solid #ffffff !important;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .btn-banner-expert:hover {
+            background-color: transparent !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+    .link-banner-discover {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+        .link-banner-discover:hover {
+            opacity: 0.8;
+        }
+
+    /* 🎯 FIX 2: GIANT STRATEGIC MOTTO CONFIGURATION HEADER (Highly Visible Spacing Map) */
+    .giant-motto-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900 !important;
+        font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+        color: #ffffff !important;
+        letter-spacing: 4px !important;
+        text-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+        text-transform: uppercase;
+    }
+
+    /* 📊 CALCULATOR INFRASTRUCTURE CARD COMPONENTS */
+    .calculator-card {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .calculator-blur-layer {
+        filter: blur(6px);
+        pointer-events: none;
+        user-select: none;
+        opacity: 0.25;
+    }
+
+    .calculator-unlocked {
+        filter: none !important;
+        pointer-events: auto !important;
+        user-select: auto !important;
+        opacity: 1 !important;
+    }
+
+    .form-group-node {
+        margin-bottom: 25px;
+    }
+
+    .calc-label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .calc-select, .calc-input-text {
+        width: 100%;
+        padding: 12px 16px;
+        background: #1e293b;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #ffffff;
+        border-radius: 6px;
+        font-weight: 600;
+        outline: none;
+    }
+
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: #1e293b;
+        height: 8px;
+        border-radius: 4px;
+    }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00d4ff;
+            cursor: pointer;
+        }
+
+    .radio-card-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .radio-custom-label {
+        background: #1e293b;
+        border: 1px solid rgba(255,255,255,0.08);
+        padding: 14px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        color: #ffffff !important;
+    }
+
+    .radio-active-state {
+        border-color: #00d4ff !important;
+        background: rgba(0, 74, 173, 0.2) !important;
+    }
+
+    .savings-display-panel {
+        background: linear-gradient(135deg, #091a36 0%, #00337c 100%);
+        border: 2px solid #004aad;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .savings-blur-active {
+        filter: blur(6px);
+        user-select: none;
+        opacity: 0.3;
+    }
+
+    .savings-counter {
+        font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+        font-weight: 800;
+        color: #00ff66 !important;
+        text-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+        margin: 10px 0;
+    }
+
+    .panel-gate-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(11, 18, 36, 0.92);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .btn-panel-unlock {
+        background: #004aad;
+        color: #ffffff;
+        border: 2px solid #00d4ff;
+        padding: 10px 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        margin-top: 12px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-panel-unlock:hover {
+            background: #00d4ff;
+            color: #0b1224;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+    @@media (max-width: 768px) {
+        .vsd-banner-panel {
+            padding: 50px 20px;
+        }
+
+        .radio-card-group {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="aerodyne-calc-engine">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-12" data-aos="fade-up">
+
+                <!-- 🎯 FULL WIDESCREEN REBUILT INDUSTRIAL ACCENT HERO PANEL (Fixed edge boundaries constraints) -->
+                <div class="vsd-banner-panel">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-10 mx-auto">
+                                <h2 class="vsd-banner-title">Calculate your VSD savings</h2>
+                                <p class="vsd-banner-desc">Calculate your savings on your own, or contact one of our experts to assist in the process</p>
+                                <div class="d-flex align-items-center flex-wrap gap-4">
+                                    <a href="tel:+916352386643" class="btn-banner-expert">Contact an expert</a>
+                                    <a href="@Url.Action("VariableSpeedPM", "Products")" class="link-banner-discover">
+                                        Discover our VSD compressors <i class="bi bi-chevron-right small ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎯 MASSIVE ENHANCED BOLD TAGLINE SUBTITLE BLOCK -->
+                <div class="text-center mb-5 py-3" data-aos="zoom-in">
+                    <h3 class="giant-motto-title">
+                        "THE VSD SHOWS YOU THE MONEY!"
+                    </h3>
+                </div>
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger border-0 text-white mb-4 rounded-3 fw-bold" style="background: #ef5350;">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["ErrorMessage"]
+                    </div>
+                }
+
+                <!-- Main Calculator Framework Sheet Layer Area -->
+                <div class="calculator-card mt-2">
+                    <div class="row g-4">
+
+                        <!-- Left Inputs Columns Parameters configuration specs -->
+                        <div class="col-md-6">
+                            <div class="form-group-node">
+                                <label class="calc-label" for="hp">Motor Power (HP Specs)</label>
+                                <select id="hp" class="calc-select">
+                                    <option value="10" selected="@(TempData["SavedHp"]?.ToString() == "10")">10 HP</option>
+                                    <option value="15" selected="@(TempData["SavedHp"]?.ToString() == "15")">15 HP</option>
+                                    <option value="20" selected="@(TempData["SavedHp"]?.ToString() == "20")">20 HP</option>
+                                    <option value="30" selected="@(TempData["SavedHp"]?.ToString() == "30" || !isUnlocked)">30 HP</option>
+                                    <option value="40" selected="@(TempData["SavedHp"]?.ToString() == "40")">40 HP</option>
+                                    <option value="50" selected="@(TempData["SavedHp"]?.ToString() == "50")">50 HP</option>
+                                    <option value="60" selected="@(TempData["SavedHp"]?.ToString() == "60")">60 HP</option>
+                                    <option value="75" selected="@(TempData["SavedHp"]?.ToString() == "75")">75 HP</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label" for="rate">Electricity Cost (Grid Unit ₹/kWh)</label>
+                                <input type="range" min="5" max="15" value="@(TempData["SavedRate"] != null ? TempData["SavedRate"] : "8")" id="rate">
+                                <div class="slider-value-display">₹ <span id="rateValue">@(TempData["SavedRate"] != null ? TempData["SavedRate"] : "8")</span> / kWh</div>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label" for="hours">Yearly Running Duty Hours</label>
+                                <select id="hours" class="calc-select">
+                                    <option value="1000" selected="@(TempData["SavedHours"]?.ToString() == "1000")">1000 Hours</option>
+                                    <option value="2000" selected="@(TempData["SavedHours"]?.ToString() == "2000")">2000 Hours</option>
+                                    <option value="3000" selected="@(TempData["SavedHours"]?.ToString() == "3000")">3000 Hours</option>
+                                    <option value="4000" selected="@(TempData["SavedHours"]?.ToString() == "4000" || !isUnlocked)">4000 Hours</option>
+                                    <option value="5000" selected="@(TempData["SavedHours"]?.ToString() == "5000")">5000 Hours</option>
+                                    <option value="6000" selected="@(TempData["SavedHours"]?.ToString() == "6000")">6000 Hours</option>
+                                    <option value="7000" selected="@(TempData["SavedHours"]?.ToString() == "7000")">7000 Hours</option>
+                                    <option value="8000" selected="@(TempData["SavedHours"]?.ToString() == "8000")">8000 Hours</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Right Inputs Columns Parameters configuration specs -->
+                        <div class="col-md-6">
+                            <div class="form-group-node">
+                                <label class="calc-label">Air Demand Profile Parameters</label>
+                                <div class="radio-card-group">
+                                    <label class="radio-custom-label" id="lblDemandStable">
+                                        <input type="radio" name="demand" value="stable" checked="@(TempData["SavedDemand"]?.ToString() == "stable")"> Stable Demand
+                                    </label>
+                                    <label class="radio-custom-label" id="lblDemandFluct">
+                                        <input type="radio" name="demand" value="fluctuating" checked="@(TempData["SavedDemand"]?.ToString() == "fluctuating" || !isUnlocked)"> Fluctuating Demand
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label">Current Plant Technology Status</label>
+                                <div class="radio-card-group">
+                                    <label class="radio-custom-label" id="lblTechFixed">
+                                        <input type="radio" name="tech" value="fixed" checked="@(TempData["SavedTech"]?.ToString() == "fixed" || !isUnlocked)"> Fixed Speed
+                                    </label>
+                                    <label class="radio-custom-label" id="lblTechVfd">
+                                        <input type="radio" name="tech" value="vfd" checked="@(TempData["SavedTech"]?.ToString() == "vfd")"> VSD Technology
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- DISPLAY PANEL TARGET (Locked with blur until user fills credentials layout postback) -->
+                            <div class="savings-display-panel mt-4">
+
+                                @if (!isUnlocked)
+                                {
+                                    <div class="panel-gate-overlay" id="inlineGateLock">
+                                        <h5 class="fw-bold text-white small text-uppercase tracking-wider mb-2" style="font-size:0.85rem; letter-spacing:0.5px;">TO VIEW TOTAL MORE YOUR SAVINGS</h5>
+                                        <form id="gateSubmitForm" asp-action="Calculation" method="post" class="w-100 px-2">
+                                            <input type="hidden" name="motorHp" id="formHiddenHp" value="30">
+                                            <input type="hidden" name="electricityRate" id="formHiddenRate" value="8">
+                                            <input type="hidden" name="runningHours" id="formHiddenHours" value="4000">
+                                            <input type="hidden" name="demandProfile" id="formHiddenDemand" value="fluctuating">
+                                            <input type="hidden" name="techStatus" id="formHiddenTech" value="fixed">
+
+                                            <div class="row g-2">
+                                                <div class="col-sm-6">
+                                                    <input type="email" name="clientEmail" class="form-control calc-input-text py-1 px-2" placeholder="Corporate Email Address" required style="font-size:0.8rem; background:#0f172a;">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="tel" name="clientPhone" class="form-control calc-input-text py-1 px-2" placeholder="Mobile / WhatsApp" required style="font-size:0.8rem; background:#0f172a;">
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn-panel-unlock w-100">Unlock Energy Profile Matrix</button>
+                                        </form>
+                                    </div>
+                                }
+
+                                <div class="@(isUnlocked ? "" : "savings-blur-active")">
+                                    <h4 class="fw-bold text-white text-uppercase mb-1" style="font-size:0.85rem; letter-spacing:1px; color:#cbd5e1 !important;">Estimated Annual Electricity Savings</h4>
+                                    <div class="savings-counter" id="savings">@savingsOutput</div>
+                                    <span class="badge bg-success rounded-1 px-3 py-2 text-uppercase fw-bold" style="font-size:0.7rem; letter-spacing:0.5px;">Power optimization matching up to 45%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between flex-wrap gap-3 px-2 text-white small mt-4" style="opacity:0.75;">
+                    <div><i class="bi bi-info-circle me-1"></i> Calculations configured based on *kW = HP × 0.746 × 45%* high-efficiency induction systems equations.</div>
+                    <div>AERODYNE Corporate Core Line.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init({ once: false, mirror: true, duration: 900 });
+
+        const rate = document.getElementById("rate");
+        const rateValue = document.getElementById("rateValue");
+        const gateForm = document.getElementById("gateSubmitForm");
+
+        rate.addEventListener("input", () => {
+            rateValue.innerText = rate.value;
+            calculate();
+        });
+
+        document.querySelectorAll("input, select").forEach(el => {
+            el.addEventListener("change", calculate);
+        });
+
+        if(gateForm) {
+            gateForm.addEventListener("submit", function() {
+                document.getElementById("formHiddenHp").value = document.getElementById("hp").value;
+                document.getElementById("formHiddenRate").value = rate.value;
+                document.getElementById("formHiddenHours").value = document.getElementById("hours").value;
+                document.getElementById("formHiddenDemand").value = document.querySelector('input[name="demand"]:checked').value;
+                document.getElementById("formHiddenTech").value = document.querySelector('input[name="tech"]:checked').value;
+            });
+        }
+
+        function handleRadioClasses() {
+            const demandRadios = document.getElementsByName("demand");
+            if(demandRadios.length > 0) {
+                document.getElementById("lblDemandStable").classList.toggle("radio-active-state", demandRadios[0].checked);
+                document.getElementById("lblDemandFluct").classList.toggle("radio-active-state", demandRadios[1].checked);
+
+                const techRadios = document.getElementsByName("tech");
+                document.getElementById("lblTechFixed").classList.toggle("radio-active-state", techRadios[0].checked);
+                document.getElementById("lblTechVfd").classList.toggle("radio-active-state", techRadios[1].checked);
+            }
+        }
+
+        function calculate() {
+            handleRadioClasses();
+
+            const hp = parseFloat(document.getElementById("hp").value);
+            const electricityRate = parseFloat(rate.value);
+            const hours = parseFloat(document.getElementById("hours").value);
+
+            const demand = document.querySelector('input[name="demand"]:checked').value;
+            const tech = document.querySelector('input[name="tech"]:checked').value;
+
+            const kw = hp * 0.746;
+            let savingFactor = 0.05;
+
+            if (demand === "fluctuating" && tech === "fixed") {
+                savingFactor = 0.45;
+            } else if (demand === "stable" && tech === "fixed") {
+                savingFactor = 0.15;
+            }
+
+            const annualEnergy = kw * hours;
+            const annualCost = annualEnergy * electricityRate;
+            const annualSavings = annualCost * savingFactor;
+
+            const formattedSavings = "₹ " + annualSavings.toLocaleString('en-IN', {
+                maximumFractionDigits: 0
+            });
+
+            if ("@isUnlocked" === "True") {
+                document.getElementById("savings").innerText = formattedSavings;
+            }
+        }
+
+        calculate();
+    });
+</script>
+
+
+
+@* @{
+    ViewData["Title"] = "Compressed Air Energy Savings Calculator | AERODYNE";
+    bool isUnlocked = TempData["VerifiedSavings"] != null;
+    string savingsOutput = isUnlocked ? TempData["VerifiedSavings"]?.ToString() : "₹ X,XX,XXX";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 PREMIUM MATRIX INDUSTRIAL ENVIRONMENT THEME */
+    .aerodyne-calc-engine {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a;
+        overflow-x: hidden;
+    }
+
+        .aerodyne-calc-engine h1,
+        .aerodyne-calc-engine h2,
+        .aerodyne-calc-engine h3,
+        .aerodyne-calc-engine h4,
+        .aerodyne-calc-engine h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* Sub-header banner elements */
+    .calc-hero {
+        background: linear-gradient(135deg, #091224 0%, #002244 100%);
+        border-bottom: 3px solid #004aad;
+        padding: 50px 0;
+        position: relative;
+    }
+
+    .back-btn {
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+        .back-btn:hover {
+            background-color: #004aad !important;
+            color: white !important;
+            transform: translateX(-5px);
+        }
+
+    /* 🎯 FIX: IMMERSIVE EXTREME WIDESCREEN HERO BANNER PANEL (Bigger Size Upgraded) */
+    .vsd-banner-panel {
+        background: linear-gradient(90deg, #0084b4 0%, #00a4d4 100%);
+        border-radius: 14px;
+        padding: 70px 60px; /* Massively increased padding for giant structure layout */
+        box-shadow: 0 20px 45px rgba(0, 132, 180, 0.3);
+        margin-bottom: 50px;
+        min-height: 340px; /* Increased minimum height to cover maximum viewport scale */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .vsd-banner-title {
+        font-size: clamp(2.4rem, 5vw, 3.6rem); /* Text size increased */
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .vsd-banner-desc {
+        font-size: 1.3rem; /* Text size increased */
+        color: #ffffff;
+        opacity: 0.95;
+        line-height: 1.6;
+        max-width: 900px;
+        margin-bottom: 40px;
+        letter-spacing: 0.2px;
+    }
+
+    .btn-banner-expert {
+        background-color: #ffffff !important;
+        color: #0084b4 !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 0.95rem; /* Button font size scaled up */
+        padding: 16px 40px; /* Button scale scaled up */
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: 2px solid #ffffff !important;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .btn-banner-expert:hover {
+            background-color: transparent !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+    .link-banner-discover {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem; /* Scaled up text layout link */
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+
+        .link-banner-discover:hover {
+            opacity: 0.8;
+        }
+
+    /* 🎯 FIX: STRATEGIC TAGLINE DESIGN ROW (Bigger, Bold & Spaced) */
+    .giant-motto-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900 !important; /* Ultra bold chassis */
+        font-size: clamp(1.6rem, 3.8vw, 2.5rem) !important; /* Huge prominent size scale */
+        color: #ffffff !important;
+        letter-spacing: 3px !important; /* Extended professional letter spacing */
+        text-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+    }
+
+    /* 📊 CALCULATOR INFRASTRUCTURE CARD COMPONENTS */
+    .calculator-card {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .calculator-blur-layer {
+        filter: blur(6px);
+        pointer-events: none;
+        user-select: none;
+        opacity: 0.25;
+    }
+
+    .calculator-unlocked {
+        filter: none !important;
+        pointer-events: auto !important;
+        user-select: auto !important;
+        opacity: 1 !important;
+    }
+
+    .form-group-node {
+        margin-bottom: 25px;
+    }
+
+    .calc-label {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .calc-select, .calc-input-text {
+        width: 100%;
+        padding: 12px 16px;
+        background: #1e293b;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #ffffff;
+        border-radius: 6px;
+        font-weight: 600;
+        outline: none;
+    }
+
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: #1e293b;
+        height: 8px;
+        border-radius: 4px;
+    }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00d4ff;
+            cursor: pointer;
+        }
+
+    .radio-card-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .radio-custom-label {
+        background: #1e293b;
+        border: 1px solid rgba(255,255,255,0.08);
+        padding: 14px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        color: #ffffff !important;
+    }
+
+    .radio-active-state {
+        border-color: #00d4ff !important;
+        background: rgba(0, 74, 173, 0.2) !important;
+    }
+
+    .savings-display-panel {
+        background: linear-gradient(135deg, #091a36 0%, #00337c 100%);
+        border: 2px solid #004aad;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .savings-blur-active {
+        filter: blur(6px);
+        user-select: none;
+        opacity: 0.3;
+    }
+
+    .savings-counter {
+        font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+        font-weight: 800;
+        color: #00ff66 !important;
+        text-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+        margin: 10px 0;
+    }
+
+    .panel-gate-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(11, 18, 36, 0.88);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .btn-panel-unlock {
+        background: #004aad;
+        color: #ffffff;
+        border: 2px solid #00d4ff;
+        padding: 10px 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        margin-top: 12px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-panel-unlock:hover {
+            background: #00d4ff;
+            color: #0b1224;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+    @@media (max-width: 768px) {
+        .vsd-banner-panel {
+            padding: 40px 25px;
+        }
+
+        .radio-card-group {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="aerodyne-calc-engine">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-11" data-aos="fade-up">
+
+                <!-- 🎯 REBUILT IMMERSIVE WIDESCREEN HERO BANNER PANEL (Bigger Layout) -->
+                <div class="vsd-banner-panel">
+                    <h2 class="vsd-banner-title">Calculate your VSD+ savings</h2>
+                    <p class="vsd-banner-desc">Calculate your savings on your own, or contact one of our experts to assist in the process</p>
+                    <div class="d-flex align-items-center flex-wrap gap-4">
+                        <a href="tel:+916352386643" class="btn-banner-expert">Contact an expert</a>
+                        <a href="@Url.Action("VariableSpeedPM", "Products")" class="link-banner-discover">
+                            Discover our VSD compressors <i class="bi bi-chevron-right small ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 🎯 REBUILT GIANT BOLD TAGLINE MOTTO (Bigger Text Layout) -->
+                <div class="text-center mb-5 py-3" data-aos="zoom-in">
+                    <h3 class="giant-motto-title">
+                        "THE VSD SHOWS YOU THE MONEY!"
+                    </h3>
+                </div>
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger border-0 text-white mb-4 rounded-3 fw-bold" style="background: #ef5350;">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["ErrorMessage"]
+                    </div>
+                }
+
+                <!-- Main Calculator Workspace Grid Area -->
+                <div class="calculator-card">
+                    <div class="row g-4">
+
+                        <!-- Left Inputs -->
+                        <div class="col-md-6">
+                            <div class="form-group-node">
+                                <label class="calc-label" for="hp">Motor Power (HP Specs)</label>
+                                <select id="hp" class="calc-select">
+                                    <option value="15" selected="@(TempData["SavedHp"]?.ToString() == "15")">15 HP</option>
+                                    <option value="20" selected="@(TempData["SavedHp"]?.ToString() == "20")">20 HP</option>
+                                    <option value="30" selected="@(TempData["SavedHp"]?.ToString() == "30" || !isUnlocked)">30 HP</option>
+                                    <option value="40" selected="@(TempData["SavedHp"]?.ToString() == "40")">40 HP</option>
+                                    <option value="50" selected="@(TempData["SavedHp"]?.ToString() == "50")">50 HP</option>
+                                    <option value="60" selected="@(TempData["SavedHp"]?.ToString() == "60")">60 HP</option>
+                                    <option value="75" selected="@(TempData["SavedHp"]?.ToString() == "75")">75 HP</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label" for="rate">Electricity Cost (Grid Unit ₹/kWh)</label>
+                                <input type="range" min="5" max="15" value="@(TempData["SavedRate"] != null ? TempData["SavedRate"] : "8")" id="rate">
+                                <div class="slider-value-display">₹ <span id="rateValue">@(TempData["SavedRate"] != null ? TempData["SavedRate"] : "8")</span> / kWh</div>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label" for="hours">Yearly Running Duty Hours</label>
+                                <select id="hours" class="calc-select">
+                                    <option value="2000" selected="@(TempData["SavedHours"]?.ToString() == "2000")">2000 Hours (Single Shift)</option>
+                                    <option value="4000" selected="@(TempData["SavedHours"]?.ToString() == "4000" || !isUnlocked)">4000 Hours (Double Shift)</option>
+                                    <option value="6000" selected="@(TempData["SavedHours"]?.ToString() == "6000")">6000 Hours (Continuous Duty)</option>
+                                    <option value="8000" selected="@(TempData["SavedHours"]?.ToString() == "8000")">8000 Hours (24/7 Factory Load)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Right Inputs -->
+                        <div class="col-md-6">
+                            <div class="form-group-node">
+                                <label class="calc-label">Air Demand Profile Parameters</label>
+                                <div class="radio-card-group">
+                                    <label class="radio-custom-label" id="lblDemandStable">
+                                        <input type="radio" name="demand" value="stable" checked="@(TempData["SavedDemand"]?.ToString() == "stable")"> Stable Demand
+                                    </label>
+                                    <label class="radio-custom-label" id="lblDemandFluct">
+                                        <input type="radio" name="demand" value="fluctuating" checked="@(TempData["SavedDemand"]?.ToString() == "fluctuating" || !isUnlocked)"> Fluctuating Demand
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group-node">
+                                <label class="calc-label">Current Plant Technology Status</label>
+                                <div class="radio-card-group">
+                                    <label class="radio-custom-label" id="lblTechFixed">
+                                        <input type="radio" name="tech" value="fixed" checked="@(TempData["SavedTech"]?.ToString() == "fixed" || !isUnlocked)"> Fixed Speed
+                                    </label>
+                                    <label class="radio-custom-label" id="lblTechVfd">
+                                        <input type="radio" name="tech" value="vfd" checked="@(TempData["SavedTech"]?.ToString() == "vfd")"> Old Gen VFD
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- DISPLAY PANEL TARGET (Locked unless postback verifies access layout) -->
+                            <div class="savings-display-panel mt-4">
+
+                                @if (!isUnlocked)
+                                {
+                                    <div class="panel-gate-overlay" id="inlineGateLock">
+                                        <h5 class="fw-bold text-white small text-uppercase tracking-wider mb-2" style="font-size:0.85rem; letter-spacing:0.5px;">TO VIEW TOTAL MORE YOUR SAVINGS</h5>
+                                        <form id="gateSubmitForm" asp-action="Calculation" method="post" class="w-100 px-2">
+                                            <input type="hidden" name="motorHp" id="formHiddenHp" value="30">
+                                            <input type="hidden" name="electricityRate" id="formHiddenRate" value="8">
+                                            <input type="hidden" name="runningHours" id="formHiddenHours" value="4000">
+                                            <input type="hidden" name="demandProfile" id="formHiddenDemand" value="fluctuating">
+                                            <input type="hidden" name="techStatus" id="formHiddenTech" value="fixed">
+
+                                            <div class="row g-2">
+                                                <div class="col-sm-6">
+                                                    <input type="email" name="clientEmail" class="form-control calc-input-text py-1 px-2" placeholder="Corporate Email Address" required style="font-size:0.8rem; background:#0f172a;">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="tel" name="clientPhone" class="form-control calc-input-text py-1 px-2" placeholder="Mobile / WhatsApp" required style="font-size:0.8rem; background:#0f172a;">
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn-panel-unlock w-100">Unlock Energy Profile Matrix</button>
+                                        </form>
+                                    </div>
+                                }
+
+                                <div class="@(isUnlocked ? "" : "savings-blur-active")">
+                                    <h4 class="fw-bold text-white text-uppercase mb-1" style="font-size:0.85rem; letter-spacing:1px; color:#cbd5e1 !important;">Estimated Annual Electricity Savings</h4>
+                                    <div class="savings-counter" id="savings">@savingsOutput</div>
+                                    <span class="badge bg-success rounded-1 px-3 py-2 text-uppercase fw-bold" style="font-size:0.7rem; letter-spacing:0.5px;">Power optimization matching up to 45%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between flex-wrap gap-3 px-2 text-white small mt-4" style="opacity:0.75;">
+                    <div><i class="bi bi-info-circle me-1"></i> Calculations configured based on *kW = HP × 0.746 × 45%* high-efficiency induction systems equations.</div>
+                    <div>AERODYNE Corporate Core Line.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init({ once: false, mirror: true });
+
+        const rate = document.getElementById("rate");
+        const rateValue = document.getElementById("rateValue");
+        const gateForm = document.getElementById("gateSubmitForm");
+
+        rate.addEventListener("input", () => {
+            rateValue.innerText = rate.value;
+            calculate();
+        });
+
+        document.querySelectorAll("input, select").forEach(el => {
+            el.addEventListener("change", calculate);
+        });
+
+        if(gateForm) {
+            gateForm.addEventListener("submit", function() {
+                document.getElementById("formHiddenHp").value = document.getElementById("hp").value;
+                document.getElementById("formHiddenRate").value = rate.value;
+                document.getElementById("formHiddenHours").value = document.getElementById("hours").value;
+                document.getElementById("formHiddenDemand").value = document.querySelector('input[name="demand"]:checked').value;
+                document.getElementById("formHiddenTech").value = document.querySelector('input[name="tech"]:checked').value;
+            });
+        }
+
+        function handleRadioClasses() {
+            const demandRadios = document.getElementsByName("demand");
+            if(demandRadios.length > 0) {
+                document.getElementById("lblDemandStable").classList.toggle("radio-active-state", demandRadios[0].checked);
+                document.getElementById("lblDemandFluct").classList.toggle("radio-active-state", demandRadios[1].checked);
+
+                const techRadios = document.getElementsByName("tech");
+                document.getElementById("lblTechFixed").classList.toggle("radio-active-state", techRadios[0].checked);
+                document.getElementById("lblTechVfd").classList.toggle("radio-active-state", techRadios[1].checked);
+            }
+        }
+
+        function calculate() {
+            handleRadioClasses();
+
+            const hp = parseFloat(document.getElementById("hp").value);
+            const electricityRate = parseFloat(rate.value);
+            const hours = parseFloat(document.getElementById("hours").value);
+
+            const demand = document.querySelector('input[name="demand"]:checked').value;
+            const tech = document.querySelector('input[name="tech"]:checked').value;
+
+            const kw = hp * 0.746;
+            let savingFactor = 0.05;
+
+            if (demand === "fluctuating" && tech === "fixed") {
+                savingFactor = 0.45;
+            } else if (demand === "stable" && tech === "fixed") {
+                savingFactor = 0.15;
+            }
+
+            const annualEnergy = kw * hours;
+            const annualCost = annualEnergy * electricityRate;
+            const annualSavings = annualCost * savingFactor;
+
+            const formattedSavings = "₹ " + annualSavings.toLocaleString('en-IN', {
+                maximumFractionDigits: 0
+            });
+
+            if ("@isUnlocked" === "True") {
+                document.getElementById("savings").innerText = formattedSavings;
+            }
+        }
+
+        calculate();
+    });
+</script> *@

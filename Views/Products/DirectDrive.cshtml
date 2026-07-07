@@ -1,0 +1,751 @@
+﻿@{
+    ViewData["Title"] = "Fixed Speed Direct Drive Screw Air Compressor Technical Specs | AERODYNE";
+    ViewData["MetaDescription"] = "Detailed technical specifications, high reliability components, and performance data sheets for AERODYNE Fixed Speed Direct Drive Industrial Screw Air Compressors.";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<style>
+    /* 🚀 PREMIUM MATRIX INDUSTRIAL THEME */
+    .aerodyne-details-engine {
+        font-family: 'Open Sans', sans-serif;
+        color: #ffffff;
+        background-color: #0f172a; /* Slate Black Backdrop */
+        overflow-x: hidden;
+    }
+
+        .aerodyne-details-engine h1,
+        .aerodyne-details-engine h2,
+        .aerodyne-details-engine h3,
+        .aerodyne-details-engine h4,
+        .aerodyne-details-engine h5,
+        .aerodyne-details-engine h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+    /* Hero Sub-header banner */
+    .detail-hero {
+        background: linear-gradient(135deg, #091224 0%, #002244 100%);
+        border-bottom: 3px solid #004aad;
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .back-btn {
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+    }
+
+        .back-btn:hover {
+            background-color: #004aad !important;
+            color: white !important;
+            transform: translateX(-5px);
+        }
+
+    /* 🛡️ EXCEPTIONAL VALUES - STRIP DISPLAY FOR 4 IMAGES */
+    .value-matrix-box {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .industrial-strip-grid {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .feature-strip-card {
+        flex: 1;
+        min-width: 140px;
+        background: #0b1224;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+        .feature-strip-card:hover {
+            transform: translateY(-5px);
+        }
+
+    /* Exact Flyer Layout Aspect Ratio Box */
+    .strip-img-box {
+        width: 100%;
+        height: 220px; /* Enhanced height scale to give clear visibility to core machine parts */
+        overflow: hidden;
+        border: 2px solid rgba(0, 212, 255, 0.2); /* Subtle blueprint cyan border around the strips */
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+    }
+
+        .strip-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+    .feature-strip-card:hover .strip-img-box img {
+        transform: scale(1.08);
+    }
+
+    /* Header text line (e.g., 2-stage, High Quality) */
+    .strip-primary-text {
+        width: 100%;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #ffffff;
+        padding: 10px 4px 4px 4px;
+        background: transparent;
+    }
+
+    /* Footer label block matching white box in image flyer */
+    .strip-footer-label {
+        width: 100%;
+        text-align: center;
+        background: #ffffff;
+        color: #00337c;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+        padding: 6px 2px;
+        text-transform: uppercase;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* 📋 HIGHLY DETAILED TECHNICAL PARAMETERS TABLE */
+    .spec-table-container {
+        background: #0b1224;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .premium-spec-table {
+        width: 100%;
+        color: #ffffff;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+        .premium-spec-table th {
+            background: #00337c !important;
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            padding: 12px 6px;
+            border: 1px solid #1e293b !important;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .premium-spec-table td {
+            padding: 8px 6px;
+            border: 1px solid #1e293b;
+            text-align: center;
+            vertical-align: middle;
+            background: #0b1224;
+            transition: background 0.2s ease;
+        }
+
+        .premium-spec-table tbody tr:hover td {
+            background: #152244 !important;
+        }
+
+    .model-highlight {
+        font-weight: 700;
+        color: #00d4ff;
+        text-align: left !important;
+        padding-left: 15px !important;
+    }
+
+    /* HIGH LEGIBILITY SUMMARY CORES */
+    .high-contrast-summary {
+        color: #ffffff !important; /* Fixed: Changed from dull grey to 100% crisp pure white text */
+        font-size: 0.98rem;
+        line-height: 1.75;
+        text-align: justify;
+    }
+
+    .high-contrast-footer {
+        color: #ffffff !important; /* Fixed: Footer credentials are now bright white for supreme visibility */
+        font-size: 0.85rem;
+    }
+</style>
+
+<div class="aerodyne-details-engine">
+
+    <section class="detail-hero">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <span class="text-uppercase fw-bold text-info tracking-wider" style="font-size:0.8rem; letter-spacing:2px;">Reliable Fleet View</span>
+                    <h1 class="display-5 fw-bold text-white mt-1 mb-0">Direct Drive Screw Compressors</h1>
+                </div>
+                <a href="@Url.Action("Product", "Home")" class="btn btn-outline-info back-btn px-4 py-2 fw-bold rounded-1 border-2">
+                    <i class="bi bi-arrow-left me-2"></i> Back to Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.6rem; letter-spacing: 0.5px;">Exceptional Values - High Reliability</h2>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-8">
+                <div class="value-matrix-box h-100">
+
+                    <div class="industrial-strip-grid mb-4">
+
+                        <div class="feature-strip-card" data-aos="fade-up" data-aos-delay="100">
+							<div class="strip-img-box">
+                                <img src="@Url.Content("~/images/firstscrew.jpg.jpeg")" alt="AERODYNE Heavy Duty 2-stage Suction Filter Element" />
+                            </div>
+                            <div class="strip-primary-text">2-stage</div>
+                            <div class="strip-footer-label">Suction Filter</div>
+                        </div>
+
+                        <div class="feature-strip-card" data-aos="fade-up" data-aos-delay="200">
+							<div class="strip-img-box">
+                                <img src="@Url.Content("~/images/secongscrew.jpeg")" alt="AERODYNE High Quality Valve Component System Layout" />
+                            </div>
+                            <div class="strip-primary-text">High Quality</div>
+                            <div class="strip-footer-label">Component System</div>
+                        </div>
+
+                        <div class="feature-strip-card" data-aos="fade-up" data-aos-delay="300">
+							<div class="strip-img-box">
+                                <img src="@Url.Content("~/images/thirdscrew.jpeg")" alt="AERODYNE High Power Induced Cooling Fan Block" />
+                            </div>
+                            <div class="strip-primary-text">High Power</div>
+                            <div class="strip-footer-label">Cooling System</div>
+                        </div>
+
+                        <div class="feature-strip-card" data-aos="fade-up" data-aos-delay="400">
+							<div class="strip-img-box">
+								<img src="@Url.Content("~/images/fourthscrew.jpeg")" alt="AERODYNE Branded Modular Electrical Distribution Matrix" />
+                            </div>
+                            <div class="strip-primary-text">Branded</div>
+                            <div class="strip-footer-label">Electrical System</div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up">
+                            <p class="high-contrast-summary mb-0">
+                                AERODYNE screw air compressor provides high-quality air you can rely on to avoid costly downtime and production delays. The robust design ensures your processes will function continuously even in the harshest conditions such as temperature up to 55°C.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" data-aos="fade-left">
+                <div class="card border-0 h-100 p-4 shadow-lg text-center" style="background:#0b1224; border: 1px solid rgba(255, 255, 255, 0.05) !important; border-radius:16px;">
+                    <span class="badge bg-info px-3 py-2 rounded-1 mx-auto mb-3 text-uppercase fw-bold text-dark" style="font-size:0.75rem; letter-spacing:1px;">Heavy Duty Fixed Speed</span>
+                    <h3 class="fw-bold text-white mb-3" style="font-size: 1.35rem;">ARD Series Fixed Unit</h3>
+                    <div class="p-3 bg-white rounded-3 mb-4 d-flex align-items-center justify-content-center" style="height: 220px;">
+                        <img src="@Url.Content("~/images/product1.png")" alt="Aerodyne Direct Drive Compressor" class="img-fluid style-contain" style="max-height:100%;" />
+                    </div>
+                    <div class="bg-dark p-3 rounded-2 border border-secondary text-start mt-auto">
+                        <span class="text-info fw-bold d-block mb-1" style="font-size:0.8rem; letter-spacing:0.5px;"><i class="bi bi-thermometer-high me-1"></i> THERMAL TOLERANCE RANGE</span>
+                        <p class="text-white fw-bold mb-0" style="font-size: 1.1rem;">Continuous Performance Up To 55°C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-uppercase fw-bold text-white mb-4" style="font-size: 1.5rem; letter-spacing: 0.5px;" data-aos="fade-right">Technical Parameters Specifications Grid</h2>
+
+        <div class="spec-table-container table-responsive mb-5" data-aos="fade-up">
+            <table class="table premium-spec-table table-bordered">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Model</th>
+                        <th colspan="2">Motor Power</th>
+                        <th rowspan="2">Pressure Variant<br><span class="text-info text-lowercase" style="font-size:0.7rem;">bar</span></th>
+                        <th colspan="2">Capacity FAD*</th>
+                        <th rowspan="2">Noise Level<br><span class="text-info text-lowercase" style="font-size:0.7rem;">db (A)</span></th>
+                        <th rowspan="2">Outlet Size<br><span class="text-info text-lowercase" style="font-size:0.7rem;">Inch</span></th>
+                        <th rowspan="2">Weight<br><span class="text-info text-lowercase" style="font-size:0.7rem;">kg</span></th>
+                        <th colspan="3">Dimensions</th>
+                    </tr>
+                    <tr>
+                        <th>kW</th>
+                        <th>hp</th>
+                        <th>CFM</th>
+                        <th>m3/min</th>
+                        <th>L (mm)</th>
+                        <th>B (mm)</th>
+                        <th>H (mm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD10A</td>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>47</td>
+                        <td>1.32</td>
+                        <td>70&plusmn;2</td>
+                        <td>1/2"</td>
+                        <td>215</td>
+                        <td>780</td>
+                        <td>600</td>
+                        <td>1020</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>43</td>
+                        <td>1.21</td>
+                        <td>70&plusmn;2</td>
+                        <td>1/2"</td>
+                        <td>215</td>
+                        <td>780</td>
+                        <td>600</td>
+                        <td>1020</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>35</td>
+                        <td>0.99</td>
+                        <td>70&plusmn;2</td>
+                        <td>1/2"</td>
+                        <td>215</td>
+                        <td>780</td>
+                        <td>600</td>
+                        <td>1020</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>31</td>
+                        <td>0.88</td>
+                        <td>70&plusmn;2</td>
+                        <td>1/2"</td>
+                        <td>215</td>
+                        <td>780</td>
+                        <td>600</td>
+                        <td>1020</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD15A</td>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>7</td>
+                        <td>66</td>
+                        <td>1.88</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>8</td>
+                        <td>64</td>
+                        <td>1.82</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>10</td>
+                        <td>51</td>
+                        <td>1.45</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>15</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>1.21</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD20A</td>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>7</td>
+                        <td>89</td>
+                        <td>2.53</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>8</td>
+                        <td>88</td>
+                        <td>2.48</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>10</td>
+                        <td>70</td>
+                        <td>1.98</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>62</td>
+                        <td>1.76</td>
+                        <td>70&plusmn;2</td>
+                        <td>3/4"</td>
+                        <td>335</td>
+                        <td>1050</td>
+                        <td>700</td>
+                        <td>1150</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD25A</td>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>7</td>
+                        <td>120</td>
+                        <td>3.39</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>8</td>
+                        <td>113</td>
+                        <td>3.21</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>10</td>
+                        <td>95</td>
+                        <td>2.68</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>18.5</td>
+                        <td>25</td>
+                        <td>12</td>
+                        <td>82</td>
+                        <td>2.32</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD30A</td>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>7</td>
+                        <td>141</td>
+                        <td>3.99</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>8</td>
+                        <td>133</td>
+                        <td>3.78</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>111</td>
+                        <td>3.15</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>12</td>
+                        <td>96</td>
+                        <td>2.73</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>465</td>
+                        <td>1300</td>
+                        <td>850</td>
+                        <td>1100</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD40A</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>7</td>
+                        <td>202</td>
+                        <td>5.71</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>8</td>
+                        <td>195</td>
+                        <td>5.53</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>10</td>
+                        <td>177</td>
+                        <td>5.00</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>12</td>
+                        <td>157</td>
+                        <td>4.46</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD50A</td>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>7</td>
+                        <td>237</td>
+                        <td>6.72</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>8</td>
+                        <td>230</td>
+                        <td>6.51</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>208</td>
+                        <td>5.88</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>50</td>
+                        <td>12</td>
+                        <td>185</td>
+                        <td>5.25</td>
+                        <td>70&plusmn;2</td>
+                        <td>1"</td>
+                        <td>630</td>
+                        <td>1470</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="4" class="model-highlight">ARD60A</td>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>7</td>
+                        <td>285</td>
+                        <td>8.08</td>
+                        <td>70&plusmn;2</td>
+                        <td>1 1/2"</td>
+                        <td>825</td>
+                        <td>1460</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>8</td>
+                        <td>268</td>
+                        <td>7.60</td>
+                        <td>70&plusmn;2</td>
+                        <td>1 1/2"</td>
+                        <td>825</td>
+                        <td>1460</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>10</td>
+                        <td>252</td>
+                        <td>7.13</td>
+                        <td>70&plusmn;2</td>
+                        <td>1 1/2"</td>
+                        <td>825</td>
+                        <td>1460</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>12</td>
+                        <td>235</td>
+                        <td>6.65</td>
+                        <td>70&plusmn;2</td>
+                        <td>1 1/2"</td>
+                        <td>825</td>
+                        <td>1460</td>
+                        <td>1000</td>
+                        <td>1380</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap gap-3 px-2 high-contrast-footer mt-4">
+            <div><i class="bi bi-telephone-fill text-info me-2"></i>Customer Care: <strong>+91-6352386643</strong></div>
+            <div><i class="bi bi-envelope-fill text-info me-2"></i>Corporate Email: <strong>aerodyne.equipments@@gmail.com</strong></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init({ once: false, mirror: true, duration: 900 });
+    });
+</script>
