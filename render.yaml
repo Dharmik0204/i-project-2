@@ -2,14 +2,14 @@ services:
   - type: web
     name: aerodyne-compressors
     runtime: docker
-    plan: free
+    plan: starter
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: SmtpSettings__Server
-        sync: false
+        value: smtp.gmail.com
       - key: SmtpSettings__Port
         value: "587"
       - key: SmtpSettings__SenderName

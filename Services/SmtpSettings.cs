@@ -4,7 +4,7 @@ public class SmtpSettings
 {
     public const string SectionName = "SmtpSettings";
 
-    public string Server { get; set; } = string.Empty;
+    public string Server { get; set; } = "smtp.gmail.com";
     public int Port { get; set; } = 587;
     public string SenderName { get; set; } = string.Empty;
     public string SenderEmail { get; set; } = string.Empty;

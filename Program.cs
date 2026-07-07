@@ -22,6 +22,14 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 });
 
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection(SmtpSettings.SectionName));
+builder.Services.PostConfigure<SmtpSettings>(settings =>
+{
+    settings.Server = string.IsNullOrWhiteSpace(settings.Server) ? "smtp.gmail.com" : settings.Server.Trim();
+    settings.SenderEmail = settings.SenderEmail?.Trim() ?? string.Empty;
+    settings.ReceiverEmail = settings.ReceiverEmail?.Trim() ?? string.Empty;
+    settings.SenderName = settings.SenderName?.Trim() ?? string.Empty;
+    settings.Password = settings.Password?.Replace(" ", string.Empty) ?? string.Empty;
+});
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddControllersWithViews(options =>
