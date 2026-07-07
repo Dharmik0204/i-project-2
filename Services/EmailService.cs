@@ -7,6 +7,8 @@ namespace AerodyneCompressors.Services;
 
 public class EmailService : IEmailService
 {
+    private const int SmtpTimeoutMs = 10000;
+
     private readonly SmtpSettings _settings;
     private readonly ILogger<EmailService> _logger;
 
@@ -21,7 +23,7 @@ public class EmailService : IEmailService
         if (!_settings.IsConfigured)
         {
             throw new InvalidOperationException(
-                "SMTP settings are not configured. Set SmtpSettings__Server, SmtpSettings__SenderEmail, and SmtpSettings__Password.");
+                "SMTP is not configured. Set SmtpSettings__SenderEmail and SmtpSettings__Password in Render Environment variables.");
         }
 
         if (string.IsNullOrWhiteSpace(message.To))
@@ -29,50 +31,56 @@ public class EmailService : IEmailService
             throw new ArgumentException("Recipient email address is required.", nameof(message));
         }
 
+        using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        timeoutCts.CancelAfter(TimeSpan.FromMilliseconds(SmtpTimeoutMs + 2000));
+
         var mimeMessage = BuildMimeMessage(message);
-        var portsToTry = GetPortsToTry();
 
-        Exception? lastError = null;
-
-        foreach (var port in portsToTry)
+        try
         {
-            try
+            using var client = new SmtpClient
             {
-                using var client = new SmtpClient { Timeout = 30000 };
+                Timeout = SmtpTimeoutMs
+            };
 
-                var secureSocketOptions = GetSecureSocketOptions(port);
-                await client.ConnectAsync(_settings.Server.Trim(), port, secureSocketOptions, cancellationToken);
-                await client.AuthenticateAsync(_settings.SenderEmail.Trim(), _settings.Password, cancellationToken);
-                await client.SendAsync(mimeMessage, cancellationToken);
-                await client.DisconnectAsync(true, cancellationToken);
+            var port = _settings.Port;
+            var secureSocketOptions = GetSecureSocketOptions(port);
 
-                _logger.LogInformation("Email sent via SMTP ({Server}:{Port}) to {Recipient}", _settings.Server, port, message.To);
-                return;
-            }
-            catch (Exception ex)
-            {
-                lastError = ex;
-                _logger.LogWarning(ex, "SMTP send failed on port {Port}", port);
-            }
+            _logger.LogInformation(
+                "Connecting to SMTP {Server}:{Port} as {Sender}",
+                _settings.Server,
+                port,
+                _settings.SenderEmail);
+
+            await client.ConnectAsync(
+                _settings.Server.Trim(),
+                port,
+                secureSocketOptions,
+                timeoutCts.Token);
+
+            await client.AuthenticateAsync(
+                _settings.SenderEmail.Trim(),
+                _settings.Password,
+                timeoutCts.Token);
+
+            await client.SendAsync(mimeMessage, timeoutCts.Token);
+            await client.DisconnectAsync(true, timeoutCts.Token);
+
+            _logger.LogInformation("Email sent via SMTP to {Recipient}", message.To);
         }
-
-        _logger.LogError(lastError, "SMTP delivery failed for {Recipient}", message.To);
-        throw new InvalidOperationException("SMTP delivery failed. Verify Gmail App Password and SMTP settings.", lastError);
-    }
-
-    private IEnumerable<int> GetPortsToTry()
-    {
-        if (_settings.Port == 465)
+        catch (OperationCanceledException ex)
         {
-            yield return 465;
-            yield break;
+            _logger.LogError(ex, "SMTP timed out connecting to {Server}:{Port}", _settings.Server, _settings.Port);
+            throw new InvalidOperationException(
+                "Email server connection timed out. On Render free plan SMTP is blocked — upgrade to Starter plan. Also verify Gmail App Password.",
+                ex);
         }
-
-        yield return _settings.Port;
-
-        if (_settings.Port == 587)
+        catch (Exception ex)
         {
-            yield return 465;
+            _logger.LogError(ex, "SMTP failed for {Recipient}", message.To);
+            throw new InvalidOperationException(
+                "SMTP delivery failed. Use a Gmail App Password (not your normal password) and verify Render SMTP environment variables.",
+                ex);
         }
     }
 

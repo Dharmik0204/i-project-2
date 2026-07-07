@@ -97,5 +97,21 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+var smtpSettings = app.Services.GetRequiredService<Microsoft.Extensions.Options.IOptions<SmtpSettings>>().Value;
+if (smtpSettings.IsConfigured)
+{
+    app.Logger.LogInformation(
+        "SMTP ready: {Server}:{Port}, sender {SenderEmail}, receiver {ReceiverEmail}",
+        smtpSettings.Server,
+        smtpSettings.Port,
+        smtpSettings.SenderEmail,
+        string.IsNullOrWhiteSpace(smtpSettings.ReceiverEmail) ? smtpSettings.SenderEmail : smtpSettings.ReceiverEmail);
+}
+else
+{
+    app.Logger.LogWarning(
+        "SMTP NOT configured. Set SmtpSettings__SenderEmail and SmtpSettings__Password in environment variables.");
+}
+
 app.Logger.LogInformation("Listening on http://+:{Port}", port);
 app.Run();
