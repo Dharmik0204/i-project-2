@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var port = Environment.GetEnvironmentVariable("PORT");
-var isRenderDeployment = !string.IsNullOrWhiteSpace(port);
+// Render always sets PORT (default 10000). Must bind to that exact port for health checks.
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+var isRenderDeployment = !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("PORT"));
 if (isRenderDeployment)
 {
-    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+    builder.WebHost.UseUrls($"http://+:{port}");
 }
 
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
@@ -47,6 +48,21 @@ builder.Services.AddAntiforgery(options =>
 
 var app = builder.Build();
 
+// Respond to Render health checks immediately, before any other middleware.
+app.Use(async (context, next) =>
+{
+    var path = context.Request.Path.Value;
+    if (path == "/health" || path == "/health/")
+    {
+        context.Response.StatusCode = StatusCodes.Status200OK;
+        context.Response.ContentType = "text/plain";
+        await context.Response.WriteAsync("healthy");
+        return;
+    }
+
+    await next();
+});
+
 app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
@@ -69,14 +85,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
-app.MapGet("/health", () => Results.Text("healthy", "text/plain")).AllowAnonymous();
-app.MapGet("/health/", () => Results.Text("healthy", "text/plain")).AllowAnonymous();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Logger.LogInformation("AERODYNE Compressors started on {Urls}", isRenderDeployment ? $"http://0.0.0.0:{port}" : "local URLs");
+app.Logger.LogInformation("Listening on http://+:{Port}", port);
 app.Run();

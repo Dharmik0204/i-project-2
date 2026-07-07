@@ -13,7 +13,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
 ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ASPNETCORE_URLS=http://0.0.0.0:10000
+# .NET 8 image defaults to port 8080; clear it so Render PORT (10000) is used.
+ENV ASPNETCORE_HTTP_PORTS=
+ENV ASPNETCORE_URLS=
 
 EXPOSE 10000
 
