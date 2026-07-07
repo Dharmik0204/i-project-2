@@ -8,8 +8,6 @@ services:
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-      - key: ConnectionStrings__ApplicationDbContextConnection
-        sync: false
       - key: SmtpSettings__Server
         sync: false
       - key: SmtpSettings__Port
